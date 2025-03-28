@@ -1,5 +1,7 @@
 package Canard;
 
+import java.lang.reflect.Type;
+
 public abstract class Canard {
     
     private String nom;
@@ -12,6 +14,14 @@ public abstract class Canard {
         this.pv = pv;
         this.atk = atk;
         this.type = type;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public TypeCanard getType() {
+        return type;
     }
 
     public void attaquer(Canard autreCanard) {
@@ -27,7 +37,12 @@ public abstract class Canard {
     }
 
     public void activerCapaciteSpeciale() {
+        System.out.println(nom + " n'a pas de capacité spéciale. Pourtant il est de type " + type + "!");
+    }
 
+    @Override
+    public String toString() {
+        return "Nom : " + nom + "\n  -PV : " + pv + "\n  -ATK : " + atk + "\n  -Type : " + type;
     }
 
 } 

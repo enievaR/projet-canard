@@ -6,10 +6,10 @@ Diagramme de classes UML:
 classDiagram
     class Canard {
         <<abstract>>
-        +String nom
-        +int pointsDeVie
-        +int pointsAttaque
-        +TypeCanard type
+        -String nom
+        -int pointsDeVie
+        -int pointsAttaque
+        -TypeCanard type
         +attaquer(Canard autreCanard)
         +subirDegats(int degats)
         +boolean estKO()
@@ -57,6 +57,8 @@ classDiagram
     }
 
     class Statut {
+        <<enum>>
+        +String nom
         +String effet
         +int duree
         +void appliquerEffet(Canard cible)

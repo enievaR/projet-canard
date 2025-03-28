@@ -2,8 +2,8 @@ package Canard;
 
 public class CanardEau extends Canard {
     
-        public CanardEau(String nom, int pv, int atk) {
-            super(nom, pv, atk, TypeCanard.EAU);
+        public CanardEau(String nom) {
+            super(nom, 100, 20, TypeCanard.EAU);
         }
 
         @Override
