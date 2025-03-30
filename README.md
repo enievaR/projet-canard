@@ -102,14 +102,13 @@ classDiagram
     Canard <|-- CanardVent
     Canard o-- TypeCanard
     Combat o-- Canard
-    Main o-- Combat
+    App o-- Combat
     Canard o-- Statut
     Canard ..|> CapaciteSpeciale
-    Canard ..|> Combattant
 ```
 
 ## Explication Diagramme
-- `Main` est la classe principale qui contient la méthode `main` pour démarrer le programme.
+- `App` est la classe principale qui contient la méthode `main` pour démarrer le programme.
 
 - `Combat` est une classe qui gère le combat entre deux canards (boucle de jeu).
 
@@ -121,28 +120,27 @@ classDiagram
 
 - `CapaciteSpeciale` est une interface qui définit la méthode `activerCapaciteSpeciale` pour les capacités spéciales des canards.	
 
-- `Statut` est une classe qui stocke l'effet appliqué et sa durée, et fournit une méthode pour appliquer l'effet à un canard.
+- `Statut` est une enumération qui définit les différents statuts (brûlé, gelé, paralysé, volé) et une méthode pour appliquer l’effet d’un statut sur un canard.
 
-- `Combattant` est une interface qui définit les méthodes `attaquer`, `subirDegats` et `estKO` pour les combattants.
 
 
 
 ## Explication et Réponses aux questions
 
 ### 1. Classes abstraites
-- `Canard` pourrait être abstraite, car elle définit les propriétés et comportements communs aux différentes sous-classes.
+- `Canard` pourrait être abstraite, car elle définit les propriétés et comportements communs aux différents canards.
 
 ### 2. Interfaces
 - `CapaciteSpeciale` pour gérer les capacités spéciales.
 
 ### 3. Gestion des statuts (brûlé, paralysé...)
-- Une classe `Statut` stocke l’effet appliqué et sa durée.
+- Une énumération `Statut` pour définir les différents statuts.
 - Chaque canard a une liste de statuts actifs, mise à jour à chaque tour.
 
 ### 4. Avantages des classes/interfaces supplémentaires
 - Facilite l’ajout de nouvelles capacités sans modifier les classes existantes.
-- Standardise les comportements pour éviter la duplication du code.
 
 ### 5. Défis d’extensibilité
-- Gestion des interactions entre types.
-- Complexité accrue avec plus de capacités et de types.
+- Gestion des interactions entre types de plus en plus complexes.
+- Le code devient de plus en plus complexe.
+- Si on souhaite créer un vrai jeu équilibré, il faut faire attention à la gestion des types et des capacités spéciales.
