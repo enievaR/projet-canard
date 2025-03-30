@@ -64,13 +64,6 @@ classDiagram
         +void appliquerEffet(Canard cible)
     }
 
-    class Combattant {
-        <<interface>>
-        +attaquer(Canard autreCanard)
-        +subirDegats(int degats)
-        +boolean estKO()
-    }
-
     Canard <|-- CanardEau
     Canard <|-- CanardFeu
     Canard <|-- CanardGlace
@@ -81,7 +74,6 @@ classDiagram
     Canard o-- Statut
     Canard ..|> CapaciteSpeciale
     Canard ..|> Combattant
-    Canard ..|> CapaciteSpeciale
 ```
 
 ## Explication Diagramme

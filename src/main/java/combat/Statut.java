@@ -2,11 +2,26 @@ package combat;
 
 import Canard.Canard;
 
+
+/*
+ * Enum representing the status effects that can be applied to a duck.
+ * Each status effect has a specific behavior when applied to a duck.
+ * 
+ */
 public enum Statut {
+    /*
+     * 
+     */
     BRULURE,
     GEL,
-    PARALYSIE;
+    PARALYSIE,
+    VOLE;
 
+    /*
+     * * Method to apply the effect of a status to a duck.
+     * * @param effet The status effect to apply.
+     * * @param canard The duck to which the effect is applied.
+     */
     public static void appliquerEffet(Statut effet, Canard canard) {
         switch (effet) {
             case BRULURE:
@@ -46,6 +61,8 @@ public enum Statut {
                     System.out.println(canard.getNom() + " a guéri de sa paralysie !");
                 }
                 break;
+            case VOLE:
+                
             
             default:
                 break;

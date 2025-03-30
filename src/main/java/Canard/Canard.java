@@ -3,8 +3,28 @@ package Canard;
 import combat.Statut;
 import combat.CapaciteSpeciale;
 
+/*
+ * Class representing a duck.
+ * Each duck has a name, health points (PV), attack points (ATK), type, status, energy points (PE), and action speed (AS).
+ * The duck can attack another duck, take damage, and check if it is knocked out (KO).
+ * It can also activate a special ability.
+ * 
+ */
+
 public abstract class Canard implements CapaciteSpeciale {
 
+    /*
+     * The name of the duck.
+     * @param nom The name of the duck.
+     * @param pv The health points of the duck.
+     * @param atk The attack points of the duck.
+     * @param type The type of the duck.
+     * @param statut The status of the duck.
+     * @param PE The energy points of the duck.
+     * @param AS The action speed of the duck.
+     * @param countTimeStatut The number of turns the duck has been under a status effect.
+     * 
+     */
     private String nom;
     private int pv;
     private int atk;
@@ -14,13 +34,20 @@ public abstract class Canard implements CapaciteSpeciale {
     private int AS;
     private int countTimeStatut = 0;
 
+    /*
+     * Constructor for the Canard class.
+     * @param nom The name of the duck.
+     * @param pv The health points of the duck.
+     * @param atk The attack points of the duck.
+     * @param type The type of the duck.
+     */
     public Canard(String nom, int pv, int atk, TypeCanard type) {
         this.nom = nom;
         this.pv = pv;
         this.atk = atk;
         this.type = type;
         this.statut = null;
-        this.PE = 15;
+        this.PE = 20;
     }
 
     public String getNom() {
@@ -76,6 +103,13 @@ public abstract class Canard implements CapaciteSpeciale {
     }
 
 
+    /**
+     * Method to attack another duck.
+     * The attack is based on the attack points of the duck and the type of the duck being attacked.
+     * The attack can be a critical hit, which doubles the damage.
+     * 
+     * @param autreCanard The duck being attacked.
+     */
     public void attaquer(Canard autreCanard) {
         if (this.PE < 5) {
             System.out.println(this.nom + " n'a pas assez de PE pour attaquer !");
@@ -103,6 +137,10 @@ public abstract class Canard implements CapaciteSpeciale {
     }
 
     public void activerCapaciteSpeciale() {
+        System.out.println(nom + " n'a pas de capacité spéciale. Pourtant il est de type " + type + "!");
+    }
+
+    public void activerCapaciteSpeciale(Canard canard) {
         System.out.println(nom + " n'a pas de capacité spéciale. Pourtant il est de type " + type + "!");
     }
 

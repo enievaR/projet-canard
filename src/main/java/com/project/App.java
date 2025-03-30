@@ -15,6 +15,9 @@ import java.lang.reflect.Type;
 
 import Canard.Canard;
 import Canard.CanardEau;
+import Canard.CanardFeu;
+import Canard.CanardGlace;
+import Canard.CanardVent;
 import combat.Combat;
 
 
@@ -64,7 +67,15 @@ public final class App {
                     case "EAU":
                         loadedCanards.add(new CanardEau(nom));
                         break;
-                    //TODO :Add Types in the future
+                    case "FEU":
+                        loadedCanards.add(new CanardFeu(nom));
+                        break;
+                    case "GLACE":
+                        loadedCanards.add(new CanardGlace(nom));
+                        break;
+                    case "VENT":
+                        loadedCanards.add(new CanardVent(nom));
+                        break;
                     default:
                         System.out.println("Type inconnu : " + type);
                 }
@@ -106,7 +117,26 @@ public final class App {
                 WriteSave(canards);
                 break;
             case 2:
-                //TODO : Add more types of canards
+                CanardFeu canardFeu = new CanardFeu(nom);
+                System.out.println("Canard Feu créé : \n");
+                System.out.println(canardFeu.toString()+"\n");
+                canards.add(canardFeu);
+                WriteSave(canards);
+                break;
+            case 3:
+                CanardGlace canardGlace = new CanardGlace(nom);
+                System.out.println("Canard Glace créé : \n");
+                System.out.println(canardGlace.toString()+"\n");
+                canards.add(canardGlace);
+                WriteSave(canards);
+                break;
+            case 4:
+                CanardVent canardVent = new CanardVent(nom);
+                System.out.println("Canard Vent créé : \n");
+                System.out.println(canardVent.toString()+"\n");
+                canards.add(canardVent);
+                WriteSave(canards);
+                break;
             default:
                 System.out.println("Type de canard inconnu. Canard Eau créé par défaut.");
                 CanardEau defaultCanard = new CanardEau(nom);
