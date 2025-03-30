@@ -2,8 +2,8 @@ package combat;
 
 import java.util.Scanner;
 
-import Canard.Canard;
-import Canard.TypeCanard;
+import canard.Canard;
+import canard.TypeCanard;
 
 /*
  * Classe Combat

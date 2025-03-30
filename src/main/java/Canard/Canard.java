@@ -1,18 +1,16 @@
-package Canard;
+package canard;
 
 import combat.Statut;
 import combat.CapaciteSpeciale;
 
 /*
  * Class representing a duck.
- * Each duck has a name, health points (PV), attack points (ATK), type, status, energy points (PE), and action speed (AS).
+ * Each duck has a name, health points (PV), attack points (ATK), 
+ * type, status, energy points (PE), and action speed (AS).
  * The duck can attack another duck, take damage, and check if it is knocked out (KO).
  * It can also activate a special ability.
- * 
  */
-
 public abstract class Canard implements CapaciteSpeciale {
-
     /*
      * The name of the duck.
      * @param nom The name of the duck.

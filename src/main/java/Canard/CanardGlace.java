@@ -1,4 +1,4 @@
-package Canard;
+package canard;
 
 import combat.Statut;
 

@@ -1,4 +1,4 @@
-package Canard;
+package canard;
 
 /*
  * Class representing a water duck.

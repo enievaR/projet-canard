@@ -1,4 +1,4 @@
-package Canard;
+package canard;
 
 /*
  * this class represents a duck of type wind

@@ -11,13 +11,14 @@ import java.util.Scanner;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import canard.Canard;
+import canard.CanardEau;
+import canard.CanardFeu;
+import canard.CanardGlace;
+import canard.CanardVent;
+
 import java.lang.reflect.Type;
 
-import Canard.Canard;
-import Canard.CanardEau;
-import Canard.CanardFeu;
-import Canard.CanardGlace;
-import Canard.CanardVent;
 import combat.Combat;
 
 

@@ -1,4 +1,4 @@
-package Canard;
+package canard;
 
 /**
  * Enum of the types of ducks.
