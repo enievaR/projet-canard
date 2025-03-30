@@ -151,3 +151,8 @@ classDiagram
 - coups critiques.
 - Point d'énergie (PE)
 - Sauvegarde des canards dans un fichier JSON.
+
+
+## Informations
+
+La javadoc est dans le fichier target/site
