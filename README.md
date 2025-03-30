@@ -144,3 +144,10 @@ classDiagram
 - Gestion des interactions entre types de plus en plus complexes.
 - Le code devient de plus en plus complexe.
 - Si on souhaite créer un vrai jeu équilibré, il faut faire attention à la gestion des types et des capacités spéciales.
+
+
+## Extensions Réalisés
+- Ajout de la gestion des Statuts (brûlé, gelé, paralysé, volé).
+- coups critiques.
+- Point d'énergie (PE)
+- Sauvegarde des canards dans un fichier JSON.
