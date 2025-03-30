@@ -6,30 +6,52 @@ Diagramme de classes UML:
 classDiagram
     class Canard {
         <<abstract>>
-        -String nom
-        -int pointsDeVie
-        -int pointsAttaque
-        -TypeCanard type
-        +attaquer(Canard autreCanard)
-        +subirDegats(int degats)
-        +boolean estKO()
-        +activerCapaciteSpeciale()
+        -nom : String
+        -pointsDeVie : int
+        -pointsAttaque : int
+        -type : TypeCanard
+        -statut : Statut
+        -PE : int
+        -AS : int
+        -countTimeStatut : int
+        +getNom() : String
+        +getType() : TypeCanard
+        +getATK() : int
+        +getStatut() : Statut
+        +setStatut(Statut statut) : void
+        +getPE() : int
+        +setPV(int pv) : void
+        +setPE(int PE) : void
+        +getAS() : int
+        +setAS(int AS) : void
+        +getCountTimeStatut() : int
+        +setCountTimeStatut(int countTimeStatut) :void
+        +attaquer(Canard autreCanard) : void
+        +subirDegats(int degats) : void
+        +estKO() : boolean
+        +activerCapaciteSpeciale() :void
+        +activerCapaciteSpeciale(Canard canard) : void
+        +toString() : String 
     }
 
     class CanardEau {
         +activerCapaciteSpeciale(): void
+        +activerCapaciteSpeciale(Canard canard) : void
     }
 
     class CanardFeu {
         +activerCapaciteSpeciale(): void
+        +activerCapaciteSpeciale(Canard canard) : void
     }
 
     class CanardGlace {
         +activerCapaciteSpeciale(): void
+        +activerCapaciteSpeciale(Canard canard) : void
     }
 
     class CanardVent {
         +activerCapaciteSpeciale(): void
+        +activerCapaciteSpeciale(Canard canard) : void
     }
 
     class TypeCanard {
@@ -42,26 +64,36 @@ classDiagram
     }
 
     class Combat {
-        +Canard canard1
-        +Canard canard2
-        +void demarrerCombat()
+        -canard1 : Canard
+        -canard2 : Canard
+        -tour : int
+        +start() : void
+        +FightMenu() : void
     }
 
-    class Main {
-        +main(String[] args)
+    class App {
+        -FILE_PATH : String static final
+        -canards : List<Canard> static
+        -ReadSave() : List<Canard> static
+        -WriteSave(List<Canard> canards) : void static
+        +CreateCanard(int type, String nom) : void static
+        +Printcanards() : void static
+        +main(String[] args) : void static
     }
 
     class CapaciteSpeciale {
         <<interface>>
         +activerCapaciteSpeciale(): void
+        +activerCapaciteSpeciale(Canard canard) : void
     }
 
     class Statut {
         <<enum>>
-        +String nom
-        +String effet
-        +int duree
-        +void appliquerEffet(Canard cible)
+        +BRULURE
+        +GEL
+        PARALYSIE
+        +VOLE
+        +void appliquerEffet(Statut effet, Canard cible) : void
     }
 
     Canard <|-- CanardEau
