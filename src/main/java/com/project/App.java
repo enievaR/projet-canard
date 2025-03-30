@@ -15,6 +15,7 @@ import java.lang.reflect.Type;
 
 import Canard.Canard;
 import Canard.CanardEau;
+import combat.Combat;
 
 
 /*
@@ -117,6 +118,16 @@ public final class App {
         }
     }
 
+    public static void Printcanards() {
+        if (canards.isEmpty()) {
+            System.out.println("Aucun canard créé.");
+            return;
+        }
+        for (int i = 0; i < canards.size(); i++) {
+            System.out.println(i+"- "+canards.get(i)+"\n");
+        }
+    }
+
     /**
      * First menu of the games
      * 
@@ -148,14 +159,29 @@ public final class App {
                         CreateCanard(typeCanard, nom); // Create the duck with the given name and type
                         break;
                     case 2:
-                        //TODO : Implement battle logic
-                        System.out.println("Lancer une bataille entre deux canards !");
+                        if(canards.size() < 2) {
+                            System.out.println("Il faut au moins 2 canards pour lancer une bataille !");
+                        } else {
+                            System.out.println("Choisissez le premier canard : ");
+                            Printcanards();
+                            int canard1Index = scanner.nextInt();
+                            System.out.println("Choisissez le deuxième canard : ");
+                            Printcanards();
+                            int canard2Index = scanner.nextInt();
+                            if (canard1Index < 0 || canard1Index >= canards.size() || canard2Index < 0 || canard2Index >= canards.size()) {
+                                System.out.println("Canard invalide. Veuillez réessayer.");
+                            } else {
+                                Combat combat = new Combat(canards.get(canard1Index), canards.get(canard2Index)); // Create a new combat with the selected ducks
+                                combat.start(); // Start the combat
+                            }
+
+                            
+                        }
+
                         break;
                     case 3:
                         System.out.println("Canards créés : \n");
-                        for (Canard canard : canards) {
-                            System.out.println(canard.toString()+"\n");
-                        }
+                        Printcanards(); // Display the list of ducks created
                         break;
                     default:
                         System.out.println("Option invalide. Veuillez réessayer.");

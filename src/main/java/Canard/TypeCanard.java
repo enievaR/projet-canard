@@ -24,13 +24,13 @@ public enum TypeCanard {
      */
     public static double getMultiplicateur(TypeCanard bully, TypeCanard bullied) {
         if (bully == EAU && bullied == FEU) {
-            return 2.0;
+            return 1.5;
         } else if (bully == FEU &&  bullied == GLACE) {
-            return 2.0;
+            return 1.5;
         } else if (bully == GLACE && bullied == VENT) {
-            return 2.0;
+            return 1.5;
         } else if (bully == VENT && bullied == EAU) {
-            return 2.0;
+            return 1.5;
         } else if (bully ==  bullied) {
             return 1.0;
         } else {

@@ -8,7 +8,12 @@ public class CanardEau extends Canard {
 
         @Override
         public void activerCapaciteSpeciale() {
-            System.out.println("Je suis un canard de type eau et j'active ma capacité spéciale !");
+            System.out.println(getNom() + " utilise sa capacité spéciale : " + getNom() + " se soigne de 20 PV !");
+            int pv = getPV() + 20;
+            if (pv > 100) {
+                pv = 100;
+            }
+            setPV(pv);
         }
 } 
 
